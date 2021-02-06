@@ -6,7 +6,15 @@ function App(){
 return <h1>Hello world</h1>
 }
 
+class App2 extends React.Component{
+
+render(){
+  return  <h1>Hello world</h1>
+}
+
+}
+
 ReactDOM.render(
-  <App></App>,
+  <App2></App2>,
   document.getElementById("root")
 );
