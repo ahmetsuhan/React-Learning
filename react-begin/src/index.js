@@ -1,21 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import Card from './Components/Card';
+const App = () => {
+  return (
+    <div>
+      <div className="card-group">
 
+       <Card></Card>
 
-//JSX 
-const names=["Ahmet Suhan","Ömer Faruk","Feyza"];
+        
 
-function App(){
-return (
-  <div>
- {names.map(name => (<h1>{name}</h1>))}
-      
+      </div>
+
     </div>
-);
+  );
+};
 
-}
-
-ReactDOM.render(
-  <App></App>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App></App>, document.getElementById("root"));
