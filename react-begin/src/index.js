@@ -1,20 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+//JSX 
+const names=["Ahmet Suhan","Ömer Faruk","Feyza"];
+
 function App(){
-
-return <h1>Hello world</h1>
-}
-
-class App2 extends React.Component{
-
-render(){
-  return  <h1>Hello world</h1>
-}
+return (
+  <div>
+ {names.map(name => (<h1>{name}</h1>))}
+      
+    </div>
+);
 
 }
 
 ReactDOM.render(
-  <App2></App2>,
+  <App></App>,
   document.getElementById("root")
 );
