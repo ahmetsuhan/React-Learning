@@ -1,3 +1,10 @@
+// Firstly constructor --> state initialization
+//render function runs firstly
+// onClick Event runs
+//setState state object updated --> triggered render
+//upto-date JSX displayed by render function 
+
+
 import React from "react";
 import PropTypes from "prop-types";
 class Collapse extends React.Component {
@@ -25,6 +32,13 @@ class Collapse extends React.Component {
 
       console.log(this);
       this.setState({showContent:!this.state.showContent});
+  
+
+      /*  wrong using. When this.state is assigned again render function will not be triggered so we have to use setState function to re-assign state variables.
+        this.state={
+          showContent:true
+      }
+      */
   }
 
   render() {
