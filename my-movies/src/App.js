@@ -61,7 +61,7 @@ class App extends React.Component {
                     <SearchBar></SearchBar>
                 </div>
             </div>
-            <MovieList as="asd"></MovieList>
+            <MovieList movies={this.state.movies}></MovieList>
         </div>
       </div>
     );
