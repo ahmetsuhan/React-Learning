@@ -10,7 +10,7 @@ const a = props.childNodes;
     <div>
       <p>
         <a
-          className="btn btn-primary"
+          className="btn btn-primary w-100"
           data-bs-toggle="collapse"
           href={"#".concat(props.href)}
           role="button"
@@ -21,7 +21,7 @@ const a = props.childNodes;
         </a>
        
       </p>
-      <div className="collapse" id={props.href}>
+      <div className="collapse show" id={props.href}>
         {props.children}
       </div>
     </div>
