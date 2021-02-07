@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const Card = (props) => {
-console.log(props);
+//console.log(props);
     return (
             <div className="card w-100">
           <img src={props.image} className="card-img-top" alt="..." />
