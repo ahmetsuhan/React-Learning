@@ -1,31 +1,39 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 class Collapse extends React.Component {
-//console.log(props.children);
+  constructor(props) {
+    super(props);
+    this.state = {
+      showContent: true,
+    };
 
-render(){
+
+  }
+
+  render() {
+
     return (
-        <div>
-          <p>
-            <a
-              className="btn btn-primary w-100"
-              data-bs-toggle="collapse"
-              href={"#".concat(this.props.href)}
-              role="button"
-              aria-expanded="false"
-              aria-controls="collapseExample"
-            >
-              Link with href
-            </a>
-           
-          </p>
-          <div className="collapse show" id={this.props.href}>
+      <div>
+        <p >
+          <a  className="btn btn-primary w-100">Link with href</a>
+        </p>
+        {
+            this.state.showContent?( <div className="collapse show">
             {this.props.children}
-          </div>
-        </div>
-      );
+            {this.state.showContent}
+          </div>):null
+        }
+       
+      </div>
+    );
+  }
 }
- 
-};
+
+Collapse.defaultProps = {};
+/*
+Collapse.propTypes={
+    //xx:PropTypes.bool,
+}
+*/
 
 export default Collapse;
