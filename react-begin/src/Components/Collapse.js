@@ -4,10 +4,27 @@ class Collapse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showContent: true,
+      showContent: false,
     };
+    /*
+    this.showMore=()=>{
+        console.log("asd");
+    }
+    */
 
+    this.showMore = this.showMore.bind(this);
+  }
 
+  showMore=()=>{
+    console.log("showMore");
+    this.setState({showContent:true});
+}
+
+  toggleShowContent=()=>{
+    console.log("toggleShowContent");
+
+      console.log(this);
+      this.setState({showContent:!this.state.showContent});
   }
 
   render() {
@@ -15,7 +32,7 @@ class Collapse extends React.Component {
     return (
       <div>
         <p >
-          <a  className="btn btn-primary w-100">Link with href</a>
+          <button onClick={this.toggleShowContent } className="btn btn-primary w-100">Link with href</button>
         </p>
         {
             this.state.showContent?( <div className="collapse show">
