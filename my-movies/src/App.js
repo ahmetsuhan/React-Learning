@@ -61,7 +61,7 @@ class App extends React.Component {
                     <SearchBar></SearchBar>
                 </div>
             </div>
-            <MovieList></MovieList>
+            <MovieList as="asd"></MovieList>
         </div>
       </div>
     );
