@@ -12,7 +12,7 @@ function MovieList() {
                           <p className="card-text">Sample Movie description</p>
                           <div className="d-flex justify-content-between align-items-center">
                               <button type="button" className="btn btn-md btn-outline-danger">Delete</button>
-                              <h2 ><span className="badge badge-info">9.0</span> </h2>
+                              <h2 ><span className="badge bg-info">9.0</span> </h2>
                           </div>
                       </div>
                   </div>
