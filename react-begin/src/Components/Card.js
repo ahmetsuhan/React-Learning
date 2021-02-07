@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 class Card extends Component {
+
+static defaultProps={
+  image:PropTypes.isRequired
+}
+
+
+
   render() {
     return (
       <div className="card w-100">
@@ -16,11 +23,14 @@ class Card extends Component {
     );
   }
 }
- Card.defaultProps ={
-  cardTitle:'Default Card Title'
+Card.defaultProps ={
+  cardTitle:'Default Card Title',
+  cardText:'Default Card Text'
  }
+
  Card.propTypes={
-   cardText:PropTypes.string
+   cardText:PropTypes.string,
+   updatedTime:PropTypes.isRequired
  }
 export default Card;
 
