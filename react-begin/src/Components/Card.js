@@ -16,7 +16,9 @@ class Card extends Component {
     );
   }
 }
-
+ Card.defaultProps ={
+  cardTitle:'Default Card Title'
+ }
 export default Card;
 
 /* 
