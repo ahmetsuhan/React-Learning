@@ -7,9 +7,9 @@ const App = () => {
     <div>
       <div className="card-group">
 
-       <Card carTitle="asdasdasd"></Card>
-       <Card carTitle="asd"></Card>
-       <Card carTitle="asd"></Card>
+       <Card cardTitle="Card Title1" cardText="Lorem Ipsum Text 1" updatedTime="Last Updated 1min ago"></Card>
+       <Card cardTitle="Card Title3" cardText="Lorem Ipsum Text 2" updatedTime="Last Updated 2mins ago"></Card>
+       <Card cardTitle="Card Title2" cardText="Lorem Ipsum Text 3" updatedTime="Last Updated 3mins ago"></Card>
       </div>
 
     </div>
