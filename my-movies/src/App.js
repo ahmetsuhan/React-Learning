@@ -8,7 +8,7 @@ import EditMovie from './components/EditMovie';
 
 //require('dotenv').config();
 
-console.log(process.env.REACT_APP_API_KEY);
+//console.log(process.env.REACT_APP_API_KEY);
 
 class App extends React.Component {
   state = {
@@ -34,7 +34,7 @@ class App extends React.Component {
     const baseURL3 = `https://api.themoviedb.org/3/list/7076296?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
     const response = await axios.get(baseURL);
-    console.log(response);
+    //console.log(response);
     this.setState({ movies: response.data });
 
     /*
