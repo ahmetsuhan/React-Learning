@@ -1,52 +1,53 @@
 {
-
-    "movies" : [
-        {
-          "name": "The Matrix 3",
-          "rating": "8.1",
-          "overview":
-            "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-          "imageURL":
-            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
-          "id": 1
-        },
-        {
-            "name": "The Matrix Reloaded",
-          "rating": "6.9",
-          "imageURL":
-            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jBegA6V243J6HUnpcOILsRvBnGb.jpg",
-            "overview":
-            "Six months after the events depicted in The Matrix, Neo has proved to be a good omen for the free humans, as more and more humans are being freed from the matrix and brought to Zion, the one and only stronghold of the Resistance. Neo himself has discovered his superpowers including super speed, ability to see the codes of the things inside the matrix and a certain degree of pre-cognition.",
-          "id": 2
-        },
-        {
-            "name": "Saw 3D",
-          "rating": "7.5",
-          "overview":
-            "SAW legacy, a group of Jigsaw survivors gathers to seek the support of self-help guru and fellow survivor Bobby Dagen, a man whose own dark secrets unleash a new wave of terror.",
-            "imageURL":
-            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qHCZ6LjtmqWDfXXN28TlIC9OppK.jpg",
-          "id": 3
-        },
-        {
-            "name": "Blitz 007",
-          "rating": "11",
-          "overview":
-            "A tough, renegade cop with a gay sidekick is dispatched to take down a serial killer who has been targeting police officers. AÇIKLAMA AÇIKLAMA",
-            "imageURL":
-            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qCPMjT8Ld8tvs1zs7LY2jpKlRIK.jpg",
-          "id": 4
-        },
-        {
-            "name": "Hostage",
-          "rating": "6.3",
-          "imageURL":
-            "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
-          "overview":
-            "When a mafia accountant is taken hostage on his beat, a police officer – wracked by guilt from a prior stint as a negotiator – must negotiate the standoff, even as his own family is held captive by the mob.",
-          "id": 5
-        }
-        
-      ]
-
+  "movies": [
+    {
+      "name": "The Matrix 3",
+      "rating": "8.1",
+      "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+      "id": 1
+    },
+    {
+      "name": "The Matrix Reloaded",
+      "rating": "6.9",
+      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jBegA6V243J6HUnpcOILsRvBnGb.jpg",
+      "overview": "Six months after the events depicted in The Matrix, Neo has proved to be a good omen for the free humans, as more and more humans are being freed from the matrix and brought to Zion, the one and only stronghold of the Resistance. Neo himself has discovered his superpowers including super speed, ability to see the codes of the things inside the matrix and a certain degree of pre-cognition.",
+      "id": 2
+    },
+    {
+      "name": "Saw 3D",
+      "rating": "7.5",
+      "overview": "SAW legacy, a group of Jigsaw survivors gathers to seek the support of self-help guru and fellow survivor Bobby Dagen, a man whose own dark secrets unleash a new wave of terror.",
+      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qHCZ6LjtmqWDfXXN28TlIC9OppK.jpg",
+      "id": 3
+    },
+    {
+      "name": "Blitz 007",
+      "rating": "11",
+      "overview": "A tough, renegade cop with a gay sidekick is dispatched to take down a serial killer who has been targeting police officers. AÇIKLAMA AÇIKLAMA",
+      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qCPMjT8Ld8tvs1zs7LY2jpKlRIK.jpg",
+      "id": 4
+    },
+    {
+      "name": "Hostage",
+      "rating": "6.3",
+      "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
+      "overview": "When a mafia accountant is taken hostage on his beat, a police officer – wracked by guilt from a prior stint as a negotiator – must negotiate the standoff, even as his own family is held captive by the mob.",
+      "id": 5
+    },
+    {
+      "name": "Ahmet Suhan Oka",
+      "rating": "12",
+      "imageURL": "https://pbs.twimg.com/profile_images/974954450510139393/VABD1Fok_400x400.jpg",
+      "overview": "Front-End developer",
+      "id": 6
+    },
+    {
+      "name": "Ömer Faruk Oka",
+      "rating": "12",
+      "imageURL": "data:image/jpeg;base64,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",
+      "overview": "Dr. Ömer Faruk Oka.",
+      "id": 7
+    }
+  ]
 }

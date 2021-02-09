@@ -1,10 +1,18 @@
 import React, { Component } from "react";
+import serialize from 'form-serialize';
 
 export class AddMovie extends Component {
+
+  handleFormSubmit=(event)=>{
+    event.preventDefault();
+    const newMovie = serialize(event.target,{hash :true});
+    console.log(newMovie);
+    this.props.onAddNewMovie(newMovie);
+  }
   render() {
     return (
       <div className="container">
-        <form className="mt-5" onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} className="mt-5" onSubmit={this.handleFormSubmit}>
           <input
             className="form-control"
             id="disabledInput"

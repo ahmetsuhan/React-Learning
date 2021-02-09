@@ -88,6 +88,11 @@ class App extends React.Component {
     this.setState({ searchQuery: event.target.value });
   };
 
+  addMovie=async (movie)=>{
+  await axios.post(`http://localhost:3002/movies/`,movie);
+  this.setState(state => ({movies:state.movies.concat(movie)}));
+  }
+
   render() {
     let filteredMovies = this.state.movies.filter((movie) => {
       return (
@@ -119,8 +124,14 @@ class App extends React.Component {
                 </React.Fragment>
               )}
             ></Route>
-
-            <Route path="/add-movie" exact component={AddMovie} />
+            <Route path="/add-movie" ecact render={({history})=>(
+              <AddMovie 
+              onAddNewMovie={(movie) => {this.addMovie(movie)
+                history.push("/")}
+            }
+              ></AddMovie>
+            )}></Route>
+            
           </Switch>
         </div>
       </Router>
