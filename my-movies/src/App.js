@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./components/Searchbar";
 import MovieList from "./components/MovieList";
 import axios from "axios";
+import AddMovie from './components/AddMovie';
 require('dotenv').config();
 
 console.log(process.env.REACT_APP_API_KEY);
@@ -110,6 +111,7 @@ class App extends React.Component {
             movies={filteredMovies}
             deleteMovieProp={this.deleteMovie}
           ></MovieList>
+          <AddMovie></AddMovie>
         </div>
       </div>
     );
