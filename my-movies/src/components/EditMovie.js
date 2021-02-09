@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import serialize from 'form-serialize';
 
-export class AddMovie extends Component {
+export class EditMovie extends Component {
 
   handleFormSubmit=(event)=>{
     event.preventDefault();
-    const newMovie = serialize(event.target,{hash :true});
-    console.log(newMovie);
-    this.props.onAddNewMovie(newMovie);
   }
   render() {
     return (
@@ -17,7 +13,7 @@ export class AddMovie extends Component {
             className="form-control"
             id="disabledInput"
             type="text"
-            placeholder="Fill The Form To Add A Movie.."
+            placeholder="Edit The Form To Update A Movie.."
             disabled
           />
           <div className="form-row">
@@ -57,4 +53,4 @@ export class AddMovie extends Component {
   }
 }
 
-export default AddMovie;
+export default EditMovie;

@@ -4,6 +4,7 @@ import MovieList from "./components/MovieList";
 import axios from "axios";
 import AddMovie from "./components/AddMovie";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import EditMovie from './components/EditMovie';
 
 //require('dotenv').config();
 
@@ -134,6 +135,8 @@ class App extends React.Component {
               ></AddMovie>
             )}></Route>
             
+            <Route path="/edit/:id" exact component={EditMovie}></Route>
+
           </Switch>
         </div>
       </Router>
