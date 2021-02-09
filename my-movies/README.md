@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### 'JSON Server'
+
+In this Application we use Json-server to doing some CRUD operations with fake or dummy database. Firstly install Json-server
+
+    npm install -i json-server
+
+After installed Json-server we need to watch our fake data's file. For watching our fake database file called movies.json  : 
+
+    json-server --watch src/api/movies.json --port 3002
+
+Done! You can use this is application.
