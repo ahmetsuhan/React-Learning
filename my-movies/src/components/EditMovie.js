@@ -15,23 +15,46 @@ export class EditMovie extends Component {
     //console.log(response.data);
     const movie = response.data;
     this.setState({
-        name : response.data.name,//movie.name
-        rating:response.data.rating,
-        overview:response.data.overview,
-        imageURL:response.data.imageURL
+      name: response.data.name, //movie.name
+      rating: response.data.rating,
+      overview: response.data.overview,
+      imageURL: response.data.imageURL,
     });
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+    /*
+    --getting updated state data's with oldschool way
+    const name = this.state.name;
+    const rating = this.state.rating;
+    const overview = this.state.overview;
+    const imageURL= this.state.imageURL;
+    */
+   //getting updated state data's with object destructing
+   const {name,rating,overview,imageURL} = this.state;
+
+   const id = this.props.match.params.id;
+
+   const updatedMovie = {
+       name,
+       rating,
+       overview,
+       imageURL,
+   };
+
+   this.props.onEditMovie(id,updatedMovie);
+   this.props.history.push("/");
+
   };
 
-  onInputChange=(event)=>{
-//console.log(event.target.name);
-//console.log(event.target.value);
-this.setState({[event.target.name]:event.target.value});
-
-  }
+  onInputChange = (event) => {
+    //console.log(event.target.name);
+    //console.log(event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
   render() {
     return (
       <div className="container">
@@ -46,25 +69,42 @@ this.setState({[event.target.name]:event.target.value});
           <div className="form-row">
             <div className="form-group col-md-10">
               <label htmlFor="inputName">Name</label>
-              <input onChange={this.onInputChange} type="text" className="form-control" name="name" 
-              value={this.state.name}/>
+              <input
+                onChange={this.onInputChange}
+                type="text"
+                className="form-control"
+                name="name"
+                value={this.state.name}
+              />
             </div>
             <div className="form-group col-md-2">
               <label htmlFor="inputRating">Rating</label>
-              <input onChange={this.onInputChange} type="text" className="form-control" name="rating" value={this.state.rating}/>
+              <input
+                onChange={this.onInputChange}
+                type="text"
+                className="form-control"
+                name="rating"
+                value={this.state.rating}
+              />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-12">
               <label htmlFor="inputImage">Image URL</label>
-              <input onChange={this.onInputChange} type="text" className="form-control" name="imageURL" value={this.state.imageURL}/>
+              <input
+                onChange={this.onInputChange}
+                type="text"
+                className="form-control"
+                name="imageURL"
+                value={this.state.imageURL}
+              />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group col-md-12">
               <label htmlFor="overviewTextarea">Overview</label>
-              <textarea 
-              onChange={this.onInputChange}
+              <textarea
+                onChange={this.onInputChange}
                 className="form-control"
                 name="overview"
                 rows="5"

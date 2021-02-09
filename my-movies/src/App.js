@@ -4,7 +4,7 @@ import MovieList from "./components/MovieList";
 import axios from "axios";
 import AddMovie from "./components/AddMovie";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import EditMovie from './components/EditMovie';
+import EditMovie from "./components/EditMovie";
 
 //require('dotenv').config();
 
@@ -29,13 +29,14 @@ class App extends React.Component {
 
   //axios: http istekleri yapmak için kullanılan promise tabanlı bir library
   async componentDidMount() {
-    const baseURL = "http://localhost:3002/movies";
-    const baseURL2 = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
-    const baseURL3 = `https://api.themoviedb.org/3/list/7076296?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+    this.getMovies();
+    //const baseURL = "http://localhost:3002/movies";
+    //const baseURL2 = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+   // const baseURL3 = `https://api.themoviedb.org/3/list/7076296?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
-    const response = await axios.get(baseURL);
+    // response = await axios.get(baseURL);
     //console.log(response);
-    this.setState({ movies: response.data });
+    //this.setState({ movies: response.data });
 
     /*
     const response2 = await axios.get(baseURL2);
@@ -89,21 +90,37 @@ class App extends React.Component {
     this.setState({ searchQuery: event.target.value });
   };
 
-  addMovie=async (movie)=>{
-  await axios.post(`http://localhost:3002/movies/`,movie);
-  this.setState(state => ({movies:state.movies.concat(movie)}));
+  addMovie = async (movie) => {
+    await axios.post(`http://localhost:3002/movies/`, movie);
+    this.setState((state) => ({ movies: state.movies.concat(movie) }));
+    this.getMovies();
+  };
+
+  async getMovies(){
+    const baseURL = "http://localhost:3002/movies";
+  
+    const response = await axios.get(baseURL);
+    //console.log(response);
+    this.setState({ movies: response.data });
   }
 
+  editMovie = async (id, updatedMovie) => {
+    await axios.put(`http://localhost:3002/movies/${id}`, updatedMovie)
+    this.getMovies();
+}
+
   render() {
-    let filteredMovies = this.state.movies.filter((movie) => {
-      return (
-        movie.name
-          .toLowerCase()
-          .indexOf(this.state.searchQuery.toLowerCase()) !== -1
-      );
-    }).sort((a,b)=>{
-      return a.id<b.id? 1 : a.id>b.id? -1 : 0;
-    });
+    let filteredMovies = this.state.movies
+      .filter((movie) => {
+        return (
+          movie.name
+            .toLowerCase()
+            .indexOf(this.state.searchQuery.toLowerCase()) !== -1
+        );
+      })
+      .sort((a, b) => {
+        return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
+      });
 
     return (
       <Router>
@@ -127,16 +144,33 @@ class App extends React.Component {
                 </React.Fragment>
               )}
             ></Route>
-            <Route path="/add-movie" ecact render={({history})=>(
-              <AddMovie 
-              onAddNewMovie={(movie) => {this.addMovie(movie)
-                history.push("/")}
-            }
-              ></AddMovie>
-            )}></Route>
-            
-            <Route path="/edit/:id" exact component={EditMovie}></Route>
+            <Route
+              path="/add-movie"
+              exact
+              render={({ history }) => (
+                <AddMovie
+                  onAddNewMovie={(movie) => {
+                    this.addMovie(movie);
+                    history.push("/");
+                  }}
+                ></AddMovie>
+              )}
+            ></Route>
 
+            <Route
+              path="/edit/:id"
+              exact
+              render={(props) => (
+                <EditMovie
+                {...props}
+                onEditMovie={(id,movie) => {
+                    this.editMovie(id,movie);
+                  }}
+                ></EditMovie>
+              )}
+            ></Route>
+
+     
           </Switch>
         </div>
       </Router>
