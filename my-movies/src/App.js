@@ -57,24 +57,32 @@ class App extends React.Component {
       const newMovieList = this.state.movies.filter(
         m=>m.id !== movie.id
       );
-      this.setState({movies:newMovieList});
+     
+     //this.setState({movies:newMovieList});
+     this.setState(state =>({
+      movies:newMovieList
+     }));
     }
-  render() {
-    return (
-      <div>
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                    <SearchBar></SearchBar>
-                </div>
-            </div>
-            <MovieList 
-            movies={this.state.movies} 
-            deleteMovieProp={this.deleteMovie}
-            ></MovieList>
+     
+    
+
+
+    render() {
+      return (
+        <div>
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-12">
+                      <SearchBar></SearchBar>
+                  </div>
+              </div>
+              <MovieList 
+              movies={this.state.movies} 
+              deleteMovieProp={this.deleteMovie}
+              ></MovieList>
+          </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
 }
 export default App;
