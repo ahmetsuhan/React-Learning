@@ -30,15 +30,16 @@ class App extends React.Component {
      ;
      const baseURL3 = `https://api.themoviedb.org/3/list/7076296?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
-    /* 
       const response = await axios.get(baseURL);
       console.log(response);
       this.setState({movies:response.data});
-     */
+     
+/*
     const response2 = await axios.get(baseURL2);
     console.log(response2.data);
     //this.setState({movies:response2.data});
     this.setState({movies:response2.data.results});
+*/
 
   }
 
@@ -90,7 +91,7 @@ class App extends React.Component {
   
     let filteredMovies = this.state.movies.filter((movie) => {
       return (
-        movie.title
+        movie.name
           .toLowerCase()
           .indexOf(this.state.searchQuery.toLowerCase()) !== -1
       );
