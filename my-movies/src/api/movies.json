@@ -34,6 +34,13 @@
       "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
       "overview": "When a mafia accountant is taken hostage on his beat, a police officer – wracked by guilt from a prior stint as a negotiator – must negotiate the standoff, even as his own family is held captive by the mob.",
       "id": 5
+    },
+    {
+      "name": "Cobra Kai (2018)",
+      "rating": "8",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eTMMU2rKpZRbo9ERytyhwatwAjz.jpg",
+      "overview": "This Karate Kid sequel series picks up 30 years after the events of the 1984 All Valley Karate Tournament and finds Johnny Lawrence on the hunt for redemption by reopening the infamous Cobra Kai karate dojo. This reignites his old rivalry with the successful Daniel LaRusso, who has been working to maintain the balance in his life without mentor Mr. Miyagi.",
+      "id": 6
     }
   ]
 }
