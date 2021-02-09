@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from './components/Searchbar';
 import MovieList from './components/MovieList';
+import axios from 'axios';
 
 class App extends React.Component {
     state={
@@ -8,6 +9,7 @@ class App extends React.Component {
         searchQuery:"",
     }
 
+   /* 
     async componentDidMount(){
       const baseURL = "http://localhost:3002/movies";
       const response = await fetch(baseURL);
@@ -16,17 +18,67 @@ class App extends React.Component {
       //console.log(data);
       this.setState({movies:data});
     }
+   */
 
+   //axios: http istekleri yapmak için kullanılan promise tabanlı bir library
+    async componentDidMount(){
+      const baseURL = "http://localhost:3002/movies";
+
+      const response = await axios.get(baseURL);
+      console.log(response);
+      this.setState({movies:response.data});
+    }
+
+    /* 
     deleteMovie = (movie)=>{
       const newMovieList = this.state.movies.filter(
         m=>m.id !== movie.id
       );
+    */
+
+    //fetch api
+/* 
+      deleteMovie = async (movie)=>{
+
+        const baseURL = `http://localhost:3002/movies/${movie.id}`;
+
+        await fetch(baseURL,{
+          method:"DELETE"
+        });
+
+
+        const newMovieList = this.state.movies.filter(
+          m=>m.id !== movie.id
+        );
+       
      
      //this.setState({movies:newMovieList});
      this.setState(state =>({
       movies:newMovieList
      }));
     }
+
+*/
+
+
+    //axios 
+    deleteMovie = async (movie)=>{
+
+      const baseURL = `http://localhost:3002/movies/${movie.id}`;
+
+      axios.delete(baseURL);
+
+
+      const newMovieList = this.state.movies.filter(
+        m=>m.id !== movie.id
+      );
+     
+   
+   //this.setState({movies:newMovieList});
+   this.setState(state =>({
+    movies:newMovieList
+   }));
+  }
      
     searchMovie=(event)=>{
 //console.log(event.target.value);
