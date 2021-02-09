@@ -1,12 +1,17 @@
 import React from "react";
 
 const MovieList = (props) => {
-
+  const truncatedStringLenght = 100;
+  const truncateOverview = (string, maxLenght) => {
+    if (!string) return null;
+    if (string.lenght <= maxLenght) return string;
+    return `${string.substring(0, maxLenght)} ...`;
+  };
 
   return (
     <div>
       <div className="row">
-        {props.movies.map((movie,i) => (
+        {props.movies.map((movie, i) => (
           <div className="col-lg-4" key={i}>
             <div className="card mb-4 shadow-sm">
               <img
@@ -16,9 +21,12 @@ const MovieList = (props) => {
               ></img>
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">{movie.overview}</p>
+                <p className="card-text">
+                  {truncateOverview(movie.overview, truncatedStringLenght)}
+                </p>
                 <div className="d-flex justify-content-between align-items-center">
-                  <button onClick={(event) => props.deleteMovieProp(movie)}
+                  <button
+                    onClick={(event) => props.deleteMovieProp(movie)}
                     type="button"
                     className="btn btn-md btn-outline-danger"
                   >
