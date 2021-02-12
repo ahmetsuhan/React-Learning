@@ -20,7 +20,7 @@ class BookList extends Component {
           {(contextBook) => {
 
             const {books} = contextBook;
-            const {isDarkTheme,dark,light} = contextTheme;
+            const {changeTheme,isDarkTheme,dark,light} = contextTheme;
             const theme = isDarkTheme?dark:light;
           
             return (
@@ -33,6 +33,7 @@ class BookList extends Component {
                     <h3 className="section-subheading text-muted">
                       lorem ipsum dolor
                     </h3>
+                    <button onClick={changeTheme} type="button" className="btn btn-sm btn-info " style={{marginTop:'-70px'}}>Change Theme</button>
                   </div>
                   <div className="row">
                     {books.map((book, index) => {
